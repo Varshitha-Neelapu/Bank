@@ -24,7 +24,7 @@ st.write("Please use the following form to get started!")
 # selecting job
 st.subheader("Customer Job")
 selected_job = st.selectbox("", df['job'].unique(), index = 3)
-st.write("Selected Job:", selected_job)
+st.write("Selected Job: ", selected_job)
 ## Encode the job entered by user
 ### Declaring function for encoding
 def encode_job(selected_item):
@@ -37,13 +37,13 @@ selected_job = encode_job(selected_job)
 st.subheader("Customer Age")
 selected_age = st.slider("", min_value = 18, max_value = 95, 
                          step = 1, value = 41)    # Slider does not tolerate dtype value mismatch df.age.max() was thus not used.
-st.write("Selected Age:", selected_age)
+st.write("Selected Age: ", selected_age)
 
 
 # selecting marital status
 st.subheader("Customer Marital")
 selected_marital = st.radio("", df['marital'].unique())
-st.write("Selected Marital:", selected_marital)
+st.write("Selected Marital: ", selected_marital)
 ## Encode the marital entered by user
 ### Declaring function for encoding
 def encode_marital(selected_item):
@@ -56,7 +56,7 @@ selected_marital = encode_marital(selected_marital)
 # selecting education
 st.subheader("Customer Education")
 selected_education = st.radio("", df['education'].unique())
-st.write("Selected Education:", selected_education)
+st.write("Selected Education: ", selected_education)
 ## Encode the education entered by user
 ### Declaring function for encoding
 def encode_education(selected_item):
@@ -68,7 +68,7 @@ selected_education = encode_education(selected_education)
  # selecting default status
 st.subheader("Customer Default Status")
 selected_default = st.radio("", df['default'].unique()[::-1])
-st.write("Selected Default Status", selected_default)
+st.write("Selected Default Status : ", selected_default)
 ## Encode the default entered by user
 ### Declaring function for encoding
 def encode_default(selected_item):
@@ -82,7 +82,7 @@ selected_default = encode_default(selected_default)
 st.subheader("Customer Balance")
 selected_balance = st.slider('', min_value = -6847,
           max_value = 81204, step = 1, value = int(df.balance.mean()))
-st.write("Selected Customer Balance", selected_balance)      
+st.write("Selected Customer Balance: ", selected_balance)      
 
 
 # selecting housing status
@@ -90,7 +90,7 @@ st.subheader("Customer Housing Status")
 
 selected_housing = st.radio("", df['housing'].unique(), 
                             index = 1, key = "1")
-st.write("Housing Status", selected_housing)
+st.write("Housing Status: ", selected_housing)
 ## Encode the housing entered by user
 ### Declaring function for encoding
 def encode_housing(selected_item):
@@ -103,7 +103,7 @@ selected_housing = encode_housing(selected_housing)
 # selecting loan status
 st.subheader('Loan Status')
 selected_loan = st.radio("", df['loan'].unique()[::-1], index = 1, key = "2")
-st.write("Selected Loan Status", selected_loan)
+st.write("Loan Status: ", selected_loan)
 ## Encode the loan entered by user
 ### Declaring function for encoding
 def encode_loan(selected_item):
@@ -115,11 +115,11 @@ selected_loan = encode_loan(selected_loan)
 
 # selecting contact
 # st.title("Customer Contact")
-st.subheader("Select Customer's Contact")
+st.subheader("Customer Contact")
 
-selected_contact = st.radio("Select Contact", df['contact'].unique(), 
+selected_contact = st.radio("", df['contact'].unique(), 
                             index = 1)
-st.write("Selected Contact Type", selected_contact)
+st.write("Contact Type", selected_contact)
 
 ## Encode the contact entered by user
 ### Declaring function for encoding
@@ -134,13 +134,13 @@ selected_contact = encode_contact(selected_contact)
 st.subheader('Day')
 day_range = list(range(df['day'].min(), df['age'].max()))
 selected_day = st.selectbox('Select Day:',(day_range), index = 19)
-st.write('You selected:', selected_day)
+st.write('You selected: ', selected_day)
 
 # selecting month
 st.subheader('Last Contact Month of Customer')
-selected_month = st.selectbox("Select Month", df['month'].unique(), 
+selected_month = st.selectbox("", df['month'].unique(), 
                             index = 1)
-st.write("Selected Month", selected_month)
+st.write("Selected Month: ", selected_month)
 ## Encode the month entered by user
 ### Declaring function for encoding
 def encode_month(selected_item):
@@ -152,37 +152,37 @@ selected_month = encode_month(selected_month)
 
 # selecting duration
 st.subheader("Customer Duration")
-selected_duration = st.slider('Select Customer Duration', min_value = 2,
+selected_duration = st.slider('', min_value = 2,
                      max_value = 3881, step = 1, 
                      value = int(df.duration.mean()))
-st.write("Selected Customer Duration", selected_duration)
+st.write("Duration: ", selected_duration)
 
 
 
 # selecting campaign
 st.subheader('Number of Contacts Peroformed in this Campaign')
 campaign_range = list(range(df['campaign'].min(), df['campaign'].max()))
-selected_campaign = st.selectbox('Select Campaign:',(campaign_range), index = 0)
-st.write('You selected:', selected_campaign)
+selected_campaign = st.selectbox('',(campaign_range), index = 0)
+st.write('You selected: ', selected_campaign)
 
 
 # selecting pdays
 st.subheader('Number of Days Before the Customer was Contacted')
 pdays_range = list(range(df['pdays'].min(), df['pdays'].max()))
-selected_pdays = st.selectbox('Select pdays:',(pdays_range), index = 0)
-st.write('You selected:', selected_pdays)
+selected_pdays = st.selectbox('',(pdays_range), index = 0)
+st.write('You selected: ', selected_pdays)
 
 
 # selecting previous
 st.subheader('Number of Contacts Performed Before this Campaign')
 previous_range = list(range(df['previous'].min(), df['previous'].max()))
-selected_previous = st.selectbox('Select previous:',(previous_range), index = 0)
-st.write('You selected:', selected_previous)
+selected_previous = st.selectbox('',(previous_range), index = 0)
+st.write('You selected: ', selected_previous)
 
 
 # selecting poutcome
 st.subheader('Outcome of Previous Campaign') 
-selected_poutcome = st.radio("Select poutcome", df['poutcome'].unique(), index = 0)
+selected_poutcome = st.radio("", df['poutcome'].unique(), index = 0)
 st.write("Selected poutcome:", selected_poutcome)
 ## Encode the poutcome entered by user
 ### Declaring function for encoding
