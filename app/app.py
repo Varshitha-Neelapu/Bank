@@ -161,7 +161,7 @@ st.write('You selected:', selected_day)
 
 # selecting month
 st.subheader('Select Last Contact Month of Customer')
-selected_month = st.radio("Select Month", df['month'].unique(), 
+selected_month = st.selectbox("Select Month", df['month'].unique(), 
                             index = 1)
 st.write("Selected Month", selected_month)
 
