@@ -65,7 +65,26 @@ def encode_education(selected_item):
 ### Using function for encoding
 selected_education = encode_education(selected_education)  
 
-  
+ # selecting default status
+st.subheader("Customer Default Status")
+selected_default = st.radio("", df['default'].unique()[::-1])
+st.write("Selected Default Status", selected_default)
+## Encode the default entered by user
+### Declaring function for encoding
+def encode_default(selected_item):
+    dict_default = {'no':0, 'yes':1}
+    return dict_default.get(selected_item, 'No info available')
+### Using function for encoding
+selected_default = encode_default(selected_default)  
+
+
+# selecting balance
+st.subheader("Customer Balance")
+selected_balance = st.slider('', min_value = -6847,
+          max_value = 81204, step = 1, value = int(df.balance.mean()))
+st.write("Selected Customer Balance", selected_balance)      
+
+
 # selecting housing status
 st.subheader("Customer Housing Status")
 
@@ -111,7 +130,11 @@ def encode_contact(selected_item):
 ### Using function for encoding
 selected_contact = encode_contact(selected_contact)  
 
-
+# selecting day
+st.subheader('Day')
+day_range = list(range(df['day'].min(), df['age'].max()))
+selected_day = st.selectbox('Select Day:',(day_range), index = 19)
+st.write('You selected:', selected_day)
 
 # selecting month
 st.subheader('Last Contact Month of Customer')
@@ -183,12 +206,12 @@ classifier = pkl.load(pickle_in)
 
 
 prediction = classifier.predict([[selected_age, selected_marital, 
-                                  selected_education,  
+                                  selected_education, selected_balance,  
                                   selected_housing, selected_loan, 
-                                  selected_month, selected_poutcome, 
+                                  selected_day, selected_month, selected_poutcome, 
                                   selected_duration, 
                                   selected_campaign, selected_pdays, selected_contact, 
-                                  dur_pdays, contact_housing, selected_job]])
+                                  dur_pdays, contact_housing, selected_job, selected_default]])
 
 
 
