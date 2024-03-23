@@ -29,7 +29,7 @@ st.write("Selected Age:", selected_age)
 
 # selecting job
 st.subheader("Select Customer's Job")
-selected_job = st.radio("", df['job'].unique(), index = 3)
+selected_job = st.selectbox("", df['job'].unique(), index = 3)
 st.write("Selected Job:", selected_job)
 
 
@@ -48,7 +48,6 @@ st.subheader("Select Customer's Marital")
 selected_marital = st.radio("", df['marital'].unique())
 st.write("Selected Marital:", selected_marital)
 
-
 ## Encode the marital entered by user
 ### Declaring function for encoding
 def encode_marital(selected_item):
@@ -57,7 +56,6 @@ def encode_marital(selected_item):
 
 ### Using function for encoding
 selected_marital = encode_marital(selected_marital)  
-
 
 
 # selecting education
@@ -73,23 +71,6 @@ def encode_education(selected_item):
 
 ### Using function for encoding
 selected_education = encode_education(selected_education)  
-
-
-# selecting default status
-st.subheader("Select Customer's Default Status")
-selected_default = st.radio("", df['default'].unique()[::-1])
-st.write("Selected Default Status", selected_default)
-
-
-## Encode the default entered by user
-### Declaring function for encoding
-def encode_default(selected_item):
-    dict_default = {'no':0, 'yes':1}
-    return dict_default.get(selected_item, 'No info available')
-
-### Using function for encoding
-selected_default = encode_default(selected_default)  
-
 
 
 # selecting balance
@@ -138,7 +119,7 @@ selected_loan = encode_loan(selected_loan)
 # st.title("Select Customer's Contact")
 st.subheader("Select Customer's Contact")
 
-selected_contact = st.radio("Select Contact", df['contact'].unique(), 
+selected_contact = st.selectbox("Select Contact", df['contact'].unique(), 
                             index = 1)
 st.write("Selected Contact Type", selected_contact)
 
@@ -240,7 +221,7 @@ prediction = classifier.predict([[selected_age, selected_marital,
                                   selected_day, selected_month, selected_poutcome, 
                                   selected_duration, 
                                   selected_campaign, selected_pdays, selected_contact, 
-                                  dur_pdays, contact_housing, selected_job, selected_default]])
+                                  dur_pdays, contact_housing, selected_job]])
 
 
 
