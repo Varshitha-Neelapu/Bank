@@ -22,7 +22,7 @@ st.write("Please use the following form to get started!")
 
 
 # selecting job
-st.subheader("Select Customer's Job")
+st.subheader("Customer's Job")
 selected_job = st.selectbox("", df['job'].unique(), index = 3)
 st.write("Selected Job:", selected_job)
 
@@ -37,14 +37,14 @@ def encode_job(selected_item):
 selected_job = encode_job(selected_job)  
 
 # selecting age
-st.subheader("Select Customer's Age")
+st.subheader("Customer's Age")
 selected_age = st.slider("Select Customer's Age", min_value = 18, max_value = 95, 
                          step = 1, value = 41)    # Slider does not tolerate dtype value mismatch df.age.max() was thus not used.
 st.write("Selected Age:", selected_age)
 
 
 # selecting marital status
-st.subheader("Select Customer's Marital")
+st.subheader("Customer's Marital")
 selected_marital = st.radio("", df['marital'].unique())
 st.write("Selected Marital:", selected_marital)
 
@@ -59,7 +59,7 @@ selected_marital = encode_marital(selected_marital)
 
 
 # selecting education
-st.subheader("Select Customer's Education")
+st.subheader("Customer's Education")
 selected_education = st.radio("", df['education'].unique())
 st.write("Selected Education:", selected_education)
 
@@ -74,18 +74,18 @@ selected_education = encode_education(selected_education)
 
 
 # selecting balance
-st.subheader("Select Customer's Balance")
+st.subheader("Customer's Balance")
 selected_balance = st.slider('', min_value = -6847,
           max_value = 81204, step = 1, value = int(df.balance.mean()))
 st.write("Selected Customer Balance", selected_balance)      
 
 
 # selecting housing status
-st.subheader("Select Customer's Housing Status")
+st.subheader("Customer's Housing Status")
 
 selected_housing = st.radio("", df['housing'].unique(), 
                             index = 1, key = "1")
-st.write("Selected Housing Status", selected_housing)
+st.write("Housing Status", selected_housing)
 
 
 ## Encode the housing entered by user
@@ -100,7 +100,7 @@ selected_housing = encode_housing(selected_housing)
 
 
 # selecting loan status
-st.subheader('Select Loan Status')
+st.subheader('Loan Status')
 
 selected_loan = st.radio("", df['loan'].unique()[::-1], index = 1, key = "2")
 st.write("Selected Loan Status", selected_loan)
@@ -116,7 +116,7 @@ selected_loan = encode_loan(selected_loan)
 
 
 # selecting contact
-# st.title("Select Customer's Contact")
+# st.title("Customer's Contact")
 st.subheader("Select Customer's Contact")
 
 selected_contact = st.selectbox("Select Contact", df['contact'].unique(), 
@@ -134,14 +134,14 @@ selected_contact = encode_contact(selected_contact)
 
 
 # selecting day
-st.subheader('Select day')
+st.subheader('Day')
 day_range = list(range(df['day'].min(), df['age'].max()))
 selected_day = st.selectbox('Select Day:',(day_range), index = 19)
 st.write('You selected:', selected_day)
 
 
 # selecting month
-st.subheader('Select Last Contact Month of Customer')
+st.subheader('Last Contact Month of Customer')
 selected_month = st.selectbox("Select Month", df['month'].unique(), 
                             index = 1)
 st.write("Selected Month", selected_month)
@@ -157,7 +157,7 @@ selected_month = encode_month(selected_month)
 
 
 # selecting duration
-st.subheader("Select Customer's Duration")
+st.subheader("Customer's Duration")
 selected_duration = st.slider('Select Customer Duration', min_value = 2,
                      max_value = 3881, step = 1, 
                      value = int(df.duration.mean()))
@@ -166,14 +166,14 @@ st.write("Selected Customer Duration", selected_duration)
 
 
 # selecting campaign
-st.subheader('Select Number of Contacts Peroformed in this Campaign')
+st.subheader('Number of Contacts Peroformed in this Campaign')
 campaign_range = list(range(df['campaign'].min(), df['campaign'].max()))
 selected_campaign = st.selectbox('Select Campaign:',(campaign_range), index = 0)
 st.write('You selected:', selected_campaign)
 
 
 # selecting pdays
-st.subheader('Select Number of Days Before the Customer was Contacted')
+st.subheader('Number of Days Before the Customer was Contacted')
 pdays_range = list(range(df['pdays'].min(), df['pdays'].max()))
 selected_pdays = st.selectbox('Select pdays:',(pdays_range), index = 0)
 st.write('You selected:', selected_pdays)
@@ -181,7 +181,7 @@ st.write('You selected:', selected_pdays)
 
 
 # selecting previous
-st.subheader('Select Number of Contacts Performed Before this Campaign')
+st.subheader('Number of Contacts Performed Before this Campaign')
 previous_range = list(range(df['previous'].min(), df['previous'].max()))
 selected_previous = st.selectbox('Select previous:',(previous_range), index = 0)
 st.write('You selected:', selected_previous)
@@ -189,7 +189,7 @@ st.write('You selected:', selected_previous)
 
 
 # selecting poutcome
-st.subheader('Select Outcome of Previous Campaign') 
+st.subheader('Outcome of Previous Campaign') 
 selected_poutcome = st.radio("Select poutcome", df['poutcome'].unique(), index = 0)
 st.write("Selected poutcome:", selected_poutcome)
 
