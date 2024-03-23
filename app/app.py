@@ -14,12 +14,7 @@ df = pd.read_csv("data/bank.csv")
 st.title('Deposit Prediction for Bank Marketing Campaign')
 
 # Sidebar for EDA and Dataset
-st.sidebar.header('Exploratory Data Analysis')
-st.sidebar.write("""https://github.com/Varshitha-Neelapu/Bank-Marketing/edit/main/Bank_Marketing_with_ML.ipynb""")
-st.sidebar.header('Dataset')
-st.sidebar.write("""https://archive.ics.uci.edu/static/public/222/bank+marketing.zip""")
-
-st.sidebar.write("""
+st.sidebar.header.write("""
     - [Exploratory Data Analysis](https://github.com/Varshitha-Neelapu/Bank-Marketing/edit/main/Bank_Marketing_with_ML.ipynb)
     - [Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)
 """)
