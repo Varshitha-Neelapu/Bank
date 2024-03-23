@@ -22,7 +22,7 @@ st.write("Please use the following form to get started!")
 
 
 # selecting job
-st.subheader("Customer's Job")
+st.subheader("Customer Job")
 selected_job = st.selectbox("", df['job'].unique(), index = 3)
 st.write("Selected Job:", selected_job)
 
@@ -37,14 +37,14 @@ def encode_job(selected_item):
 selected_job = encode_job(selected_job)  
 
 # selecting age
-st.subheader("Customer's Age")
+st.subheader("Customer Age")
 selected_age = st.slider("Select Customer's Age", min_value = 18, max_value = 95, 
                          step = 1, value = 41)    # Slider does not tolerate dtype value mismatch df.age.max() was thus not used.
 st.write("Selected Age:", selected_age)
 
 
 # selecting marital status
-st.subheader("Customer's Marital")
+st.subheader("Customer Marital")
 selected_marital = st.radio("", df['marital'].unique())
 st.write("Selected Marital:", selected_marital)
 
@@ -59,7 +59,7 @@ selected_marital = encode_marital(selected_marital)
 
 
 # selecting education
-st.subheader("Customer's Education")
+st.subheader("Customer Education")
 selected_education = st.radio("", df['education'].unique())
 st.write("Selected Education:", selected_education)
 
@@ -74,14 +74,14 @@ selected_education = encode_education(selected_education)
 
 
 # selecting balance
-st.subheader("Customer's Balance")
+st.subheader("Customer Balance")
 selected_balance = st.slider('', min_value = -6847,
           max_value = 81204, step = 1, value = int(df.balance.mean()))
 st.write("Selected Customer Balance", selected_balance)      
 
 
 # selecting housing status
-st.subheader("Customer's Housing Status")
+st.subheader("Customer Housing Status")
 
 selected_housing = st.radio("", df['housing'].unique(), 
                             index = 1, key = "1")
@@ -116,8 +116,8 @@ selected_loan = encode_loan(selected_loan)
 
 
 # selecting contact
-# st.title("Customer's Contact")
-st.subheader("Select Customer's Contact")
+# st.title("Customer Contact")
+st.subheader("Customer Contact")
 
 selected_contact = st.selectbox("Select Contact", df['contact'].unique(), 
                             index = 1)
@@ -157,7 +157,7 @@ selected_month = encode_month(selected_month)
 
 
 # selecting duration
-st.subheader("Customer's Duration")
+st.subheader("Customer Duration")
 selected_duration = st.slider('Select Customer Duration', min_value = 2,
                      max_value = 3881, step = 1, 
                      value = int(df.duration.mean()))
