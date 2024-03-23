@@ -1,8 +1,3 @@
-"""
-The script develops the user application. This application accepts user inputs and 
-feeds them to the model. The resulting model predictions are displayed in the application.    
-"""
-
 import pandas as pd
 import streamlit as st
 import pickle as pkl
@@ -24,8 +19,6 @@ st.sidebar.write("""
 
 st.write("This app is based on 16 inputs that predict wheather a customer will deposit or not? Using this app, a bank can identify specific customer segments; that will make deposits.")
 st.write("Please use the following form to get started!")
-st.markdown('<p class="big-font">(NOTE: For convinience, usual values are pre-selected in the form.)</p>', unsafe_allow_html=True)
-
 
 # selecting age
 st.subheader("Select Customer's Age")
@@ -229,7 +222,6 @@ def encode_pout(selected_item):
 selected_poutcome = encode_pout(selected_poutcome) 
 
 
-
 # Adding Features
 dur_pdays = ((selected_duration + selected_previous**0.15 - 
               (selected_contact**2)**0.0003 )**2)**0.25
@@ -249,6 +241,7 @@ prediction = classifier.predict([[selected_age, selected_marital,
                                   selected_duration, 
                                   selected_campaign, selected_pdays, selected_contact, 
                                   dur_pdays, contact_housing, selected_job, selected_default]])
+
 
 
 
