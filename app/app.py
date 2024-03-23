@@ -66,7 +66,6 @@ def encode_education(selected_item):
 selected_education = encode_education(selected_education)  
 
   
-
 # selecting housing status
 st.subheader("Customer Housing Status")
 
@@ -97,10 +96,11 @@ selected_loan = encode_loan(selected_loan)
 
 # selecting contact
 # st.title("Customer Contact")
-st.subheader("Customer Contact")
+st.subheader("Select Customer's Contact")
 
-selected_contact = st.selectbox(df['contact'].unique(), index = 1)
-st.write("Selected Contact Type:", selected_contact)
+selected_contact = st.radio("Select Contact", df['contact'].unique(), 
+                            index = 1)
+st.write("Selected Contact Type", selected_contact)
 
 ## Encode the contact entered by user
 ### Declaring function for encoding
@@ -110,6 +110,7 @@ def encode_contact(selected_item):
 
 ### Using function for encoding
 selected_contact = encode_contact(selected_contact)  
+
 
 
 # selecting month
