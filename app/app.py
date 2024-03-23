@@ -34,8 +34,8 @@ def encode_job(selected_item):
 selected_job = encode_job(selected_job)  
 
 # selecting age
-st.subheader("Customer Age")
-selected_age = st.slider( min_value = 18, max_value = 95, 
+st.subheader("Select Customer's Age")
+selected_age = st.slider("Select Customer's Age", min_value = 18, max_value = 95, 
                          step = 1, value = 41)    # Slider does not tolerate dtype value mismatch df.age.max() was thus not used.
 st.write("Selected Age:", selected_age)
 
