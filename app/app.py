@@ -15,9 +15,15 @@ st.title('Deposit Prediction for Bank Marketing Campaign')
 
 # Sidebar for EDA and Dataset
 st.sidebar.header('Exploratory Data Analysis')
-st.sidebar.write('Content for EDA here...')
+st.sidebar.write("""https://github.com/Varshitha-Neelapu/Bank-Marketing/edit/main/Bank_Marketing_with_ML.ipynb""")
 st.sidebar.header('Dataset')
-st.sidebar.write('Content for Dataset here...')
+st.sidebar.write("""https://archive.ics.uci.edu/static/public/222/bank+marketing.zip""")
+
+st.sidebar.write("""
+    - [Exploratory Data Analysis](https://github.com/Varshitha-Neelapu/Bank-Marketing/edit/main/Bank_Marketing_with_ML.ipynb)
+    - [Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)
+""")
+
 
 st.write("This app is based on 16 inputs that predict wheather a customer will deposit or not? Using this app, a bank can identify specific customer segments; that will make deposits.")
 st.write("Please use the following form to get started!")
