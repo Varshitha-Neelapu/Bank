@@ -6,7 +6,7 @@ import os
 
 df = pd.read_csv("data/bank.csv")
 
-st.title('Deposit Prediction for Bank Marketing Campaign')
+st.title('Prediction for Bank Marketing Campaign')
 
 # Sidebar for EDA and Dataset
 st.sidebar.write("""
