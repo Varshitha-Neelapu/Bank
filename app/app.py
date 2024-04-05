@@ -3,6 +3,39 @@ import streamlit as st
 import pickle as pkl
 import os
 
+
+# Define CSS styles for the button-like links
+button_style = """
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #eee;
+        color: black;
+        border: 1px solid #ccc;
+        cursor: pointer;
+    }
+    a:hover {
+        background-color: #ddd;
+    }
+"""
+
+st.sidebar.write(f'<style>{button_style}</style>', unsafe_allow_html=True)
+
+# Use anchor tags with the desired links and styled class
+st.sidebar.write("""
+    <a href="https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%2Learning.ipynb" class="button">Exploratory Data Analysis</a>
+""")
+
+st.sidebar.write("""
+    <a href="https://archive.ics.uci.edu/static/public/222/bank+marketing.zip" class="button">Dataset</a>
+""")
+
+
+
+
 # Hide the Streamlit sidebar menu
 hide_st_style = """
 <style>
