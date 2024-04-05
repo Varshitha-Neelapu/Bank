@@ -19,18 +19,14 @@ df = pd.read_csv("data/bank.csv")
 
 st.title('Prediction for Bank Marketing Campaign')
 
-import webbrowser
-
-# Function to open the link in a new tab
-def open_link_in_new_tab(link):
-    webbrowser.open_new_tab(link)
 
 # Create buttons in the sidebar
 if st.sidebar.button("Exploratory Data Analysis"):
-    open_link_in_new_tab("https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb")
+    st.sidebar.markdown('<a href="https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb" target="_blank">Exploratory Data Analysis</a>', unsafe_allow_html=True)
 
 if st.sidebar.button("Dataset"):
-    open_link_in_new_tab("https://archive.ics.uci.edu/static/public/222/bank+marketing.zip")
+    st.sidebar.markdown('<a href="https://archive.ics.uci.edu/static/public/222/bank+marketing.zip" target="_blank">Dataset</a>', unsafe_allow_html=True)
+
 
 
 st.write("This app is based on 16 inputs that predict wheather a customer will deposit or not? Using this app, a bank can identify specific customer segments; that will make deposits.")
