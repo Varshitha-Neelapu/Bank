@@ -1,6 +1,16 @@
 import streamlit as st
 import mysql.connector
 
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 # Connect to MySQL
 connection = mysql.connector.connect(
     host="localhost",
@@ -30,13 +40,15 @@ def login():
     password = st.text_input("Password", type="password")
     if st.button("Login"):
         if username and password:
-            if authenticate_user(username, password):
-                               
+            if authenticate_user(username, password):   
+                   
                 st.success("Logged in as {}".format(username))
                 
             else:
                 st.error("Invalid username or password")
 
+
+    
 def authenticate_user(username, password):
     query = "SELECT * FROM users WHERE username = %s AND password = %s"
     cursor.execute(query, (username, password))
@@ -71,6 +83,8 @@ def register_user(username, password):
         cursor.execute(insert_query, (username, password))
         connection.commit()
         return True
+    
+from app import show_main_app
 
 if __name__ == "__main__":
     main()
