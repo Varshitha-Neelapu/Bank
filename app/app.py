@@ -28,11 +28,15 @@ st.sidebar.write("""
     [Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)
 """)
 
+import streamlit as st
+
+# Create buttons in the sidebar that directly redirect to the links
 if st.sidebar.button("Exploratory Data Analysis"):
-    st.sidebar.markdown("[Exploratory Data Analysis](https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb)")
+    st.sidebar.markdown('<a href="https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb" target="_blank">Exploratory Data Analysis</a>', unsafe_allow_html=True)
 
 if st.sidebar.button("Dataset"):
-    st.sidebar.markdown("[Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)")
+    st.sidebar.markdown('<a href="https://archive.ics.uci.edu/static/public/222/bank+marketing.zip" target="_blank">Dataset</a>', unsafe_allow_html=True)
+
     
 
 st.write("This app is based on 16 inputs that predict wheather a customer will deposit or not? Using this app, a bank can identify specific customer segments; that will make deposits.")
