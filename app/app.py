@@ -19,17 +19,6 @@ df = pd.read_csv("data/bank.csv")
 
 st.title('Prediction for Bank Marketing Campaign')
 
-# Sidebar for EDA and Dataset
-st.sidebar.write("""
-    [Exploratory Data Analysis](https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb)
-""")
-
-st.sidebar.write("""
-    [Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)
-""")
-
-import streamlit as st
-
 # Create buttons in the sidebar that directly redirect to the links
 if st.sidebar.button("Exploratory Data Analysis"):
     st.sidebar.markdown('<a href="https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb" target="_blank">Exploratory Data Analysis</a>', unsafe_allow_html=True)
