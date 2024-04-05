@@ -28,6 +28,12 @@ st.sidebar.write("""
     [Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)
 """)
 
+if st.sidebar.button("Exploratory Data Analysis"):
+    st.sidebar.markdown("[Exploratory Data Analysis](https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb)")
+
+if st.sidebar.button("Dataset"):
+    st.sidebar.markdown("[Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)")
+    
 
 st.write("This app is based on 16 inputs that predict wheather a customer will deposit or not? Using this app, a bank can identify specific customer segments; that will make deposits.")
 st.write("Please use the following form to get started!")
