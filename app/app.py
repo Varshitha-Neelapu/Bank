@@ -12,6 +12,9 @@ st.title('Prediction for Bank Marketing Campaign')
 st.sidebar.write("""
     [Exploratory Data Analysis](https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb)
 """)
+st.sidebar.button("""
+    [Exploratory Data Analysis](https://github.com/emekaefidi/Bank-Marketing-with-Machine-Learning/blob/master/Bank%20Marketing%20with%20Machine%20Learning.ipynb)
+""")
 st.sidebar.write("""
     [Dataset](https://archive.ics.uci.edu/static/public/222/bank+marketing.zip)
 """)
